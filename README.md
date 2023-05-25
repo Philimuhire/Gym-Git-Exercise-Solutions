@@ -167,4 +167,206 @@ To https://github.com/Philimuhire/Gym-Git-Exercise-Solutions.git
 
 '''
 
+# Exercise 2
+
+'''Bash
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git status
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        about.html
+        home.html
+        team.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git stash list
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git add all
+fatal: pathspec 'all' did not match any files
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git add -all
+error: did you mean `--all` (with two dashes)?
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git add --all
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git status
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+        new file:   team.html
+
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git stash
+Saved working directory and index state WIP on dev: 151a713 Merge branch 'main' of https://github.com/Philimuhire/Gym-Git-Exercise-Solutions
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git list
+git: 'list' is not a git command. See 'git --help'.
+
+The most similar commands are
+        bisect
+        rev-list
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git stash list
+stash@{0}: WIP on dev: 151a713 Merge branch 'main' of https://github.com/Philimuhire/Gym-Git-Exercise-Solutions
+  
+  
+$ git status
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        about.html
+        home.html
+        team.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git add home.html
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git stash
+Saved working directory and index state WIP on dev: 151a713 Merge branch 'main' of https://github.com/Philimuhire/Gym-Git-Exercise-Solutions
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git stash list
+stash@{0}: WIP on dev: 151a713 Merge branch 'main' of https://github.com/Philimuhire/Gym-Git-Exercise-Solutions
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git add about.html
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git stash
+Saved working directory and index state WIP on dev: 151a713 Merge branch 'main' of https://github.com/Philimuhire/Gym-Git-Exercise-Solutions
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git add team.html
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git stash
+Saved working directory and index state WIP on dev: 151a713 Merge branch 'main' of https://github.com/Philimuhire/Gym-Git-Exercise-Solutions
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git stash list
+stash@{0}: WIP on dev: 151a713 Merge branch 'main' of https://github.com/Philimuhire/Gym-Git-Exercise-Solutions
+stash@{1}: WIP on dev: 151a713 Merge branch 'main' of https://github.com/Philimuhire/Gym-Git-Exercise-Solutions
+stash@{2}: WIP on dev: 151a713 Merge branch 'main' of https://github.com/Philimuhire/Gym-Git-Exercise-Solutions
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git stash pop stash@{1}
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+
+Dropped stash@{1} (b799158e43b623fd62f846610db8a9a50de672af)
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git stash list
+stash@{0}: WIP on dev: 151a713 Merge branch 'main' of https://github.com/Philimuhire/Gym-Git-Exercise-Solutions
+stash@{1}: WIP on dev: 151a713 Merge branch 'main' of https://github.com/Philimuhire/Gym-Git-Exercise-Solutions
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git stash pop stash@{1}
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+
+Dropped stash@{1} (408d55206011ae83446287edc3c0584c3cefbbc6)
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git stash list
+stash@{0}: WIP on dev: 151a713 Merge branch 'main' of https://github.com/Philimuhire/Gym-Git-Exercise-Solutions
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git add --all
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git status
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git commit -m "second commit"
+[dev ddc54e5] second commit
+ 2 files changed, 308 insertions(+)
+ create mode 100644 about.html
+ create mode 100644 home.html
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 282 bytes | 282.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Philimuhire/Gym-Git-Exercise-Solutions.git
+   151a713..ddc54e5  dev -> dev
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git stash pop
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   team.html
+
+Dropped refs/stash@{0} (0b9e92487dc96e5f2d5900b804d3ca127e2decad)
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git stash list
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git reset --hard
+HEAD is now at ddc54e5 second commit
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git status
+On branch dev
+Your branch is up to date with 'origin/dev'.
+
+nothing to commit, working tree clean
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$
+'''
+
+
+
+  
+  
+  
+
 
