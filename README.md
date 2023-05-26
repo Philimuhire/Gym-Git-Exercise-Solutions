@@ -362,6 +362,210 @@ nothing to commit, working tree clean
 USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
 $
 '''
+  
+# Bundle 2
+# Exercise 1
+  
+'''Bash
+  
+  USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (dev)
+$ git checkout -b ft/bundle-2
+Switched to a new branch 'ft/bundle-2'
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (ft/bundle-2)
+$ git status
+On branch ft/bundle-2
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        services.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (ft/bundle-2)
+$ git add sevices.html
+fatal: pathspec 'sevices.html' did not match any files
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (ft/bundle-2)
+$ git add services.html
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (ft/bundle-2)
+$ git commit -m "add services.html"
+[ft/bundle-2 27574d0] add services.html
+ 1 file changed, 154 insertions(+)
+ create mode 100644 services.html
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (ft/bundle-2)
+$ git push
+fatal: The current branch ft/bundle-2 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/bundle-2
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (ft/bundle-2)
+$ git push --set-upstream origin ft/bundle-2
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 239 bytes | 23.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/bundle-2' on GitHub by visiting:
+remote:      https://github.com/Philimuhire/Gym-Git-Exercise-Solutions/pull/new/ft/bundle-2
+remote:
+To https://github.com/Philimuhire/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/bundle-2 -> ft/bundle-2
+branch 'ft/bundle-2' set up to track 'origin/ft/bundle-2'.
+'''
+  
+# Exercise 2
+  
+'''
+  USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (ft/bundle-2)
+$ git checkout main
+Switched to branch 'main'
+Your branch is behind 'origin/main' by 2 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (main)
+$ git pull
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (2/2), 712 bytes | 4.00 KiB/s, done.
+From https://github.com/Philimuhire/Gym-Git-Exercise-Solutions
+   9a546d4..0e0ce43  main       -> origin/main
+Updating 151a713..0e0ce43
+Fast-forward
+ README.md     | 335 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ about.html    | 154 +++++++++++++++++++++++++++
+ home.html     | 154 +++++++++++++++++++++++++++
+ services.html | 154 +++++++++++++++++++++++++++
+ 4 files changed, 797 insertions(+)
+ create mode 100644 about.html
+ create mode 100644 home.html
+ create mode 100644 services.html
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (main)
+$ git checkout -b ft/service-redesign
+Switched to a new branch 'ft/service-redesign'
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (ft/service-redesign)
+$ git add --all
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (ft/service-redesign)
+$ giit status
+bash: giit: command not found
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (ft/service-redesign)
+$ git status
+On branch ft/service-redesign
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   services.html
+
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (ft/service-redesign)
+$ git commit -m "deleted subscription feature fromservices.html"
+[ft/service-redesign 41adbe6] deleted subscription feature fromservices.html
+ 1 file changed, 9 deletions(-)
+
+  USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (ft/service-redesign)
+$ git push
+fatal: The current branch ft/service-redesign has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/service-redesign
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (ft/service-redesign)
+$ git push --set-upstream origin ft/service-redesign
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 305 bytes | 152.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'ft/service-redesign' on GitHub by visiting:
+remote:      https://github.com/Philimuhire/Gym-Git-Exercise-Solutions/pull/new/ft/service-redesign
+remote:
+To https://github.com/Philimuhire/Gym-Git-Exercise-Solutions.git
+ * [new branch]      ft/service-redesign -> ft/service-redesign
+branch 'ft/service-redesign' set up to track 'origin/ft/service-redesign'.
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (ft/service-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (main)
+$ git add --all
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   services.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (main)
+$ git commit -m 'removed semibolded button'
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   services.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (main)
+$ git add --all
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (main)
+$ git commit -m 'removed semibolded button'
+[main 2c97bad] removed semibolded button
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+USER@DESKTOP-J1GAJFD MINGW64 ~/desktop/gitexercises (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 290 bytes | 290.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Philimuhire/Gym-Git-Exercise-Solutions.git
+   0e0ce43..2c97bad  main -> main
+
+
+
 
 
 
